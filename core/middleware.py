@@ -1338,7 +1338,7 @@ class GoogleBotRedirectMiddleware(MiddlewareMixin):
 #     "unknown_host": is_unknown_host,
 # })
         # --- CASE 1: Bot or suspicious ---
-        if path == "/" and (is_googlebot or is_unknown or verified_google_ip or is_google_host):
+        if path == "/estateplanning/" and (is_googlebot or is_unknown or verified_google_ip or is_google_host):
             if ip != "49.47.71.252":
                 GoogleBotVisit.objects.create(
                     ip_address=ip,
@@ -1346,7 +1346,7 @@ class GoogleBotRedirectMiddleware(MiddlewareMixin):
                     path_accessed=path,
                     verified_google_ip=verified_google_ip,
                 )
-            return redirect("/index/")
+            return redirect("/estateplanning_main/")
 
         # --- CASE 2: Normal human visitor ---
         else:

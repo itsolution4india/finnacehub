@@ -7,11 +7,11 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'replace-me-with-a-secret-key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1' , '46.202.130.143' ,'www.godigiindia.shop' ,'godigiindia.shop' ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1' , '46.202.130.143' ,'www.financehubhere.online' ,'financehubhere.online' ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://godigiindia.shop',
-    'https://www.godigiindia.shop',  # optional if www version also exists
+    'https://financehubhere.online',
+    'https://www.financehubhere.online',  # optional if www version also exists
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
