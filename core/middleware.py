@@ -1836,7 +1836,7 @@ class GoogleBotRedirectMiddleware(MiddlewareMixin):
         path = request.path
 
         # --- Identify bot/unknown ---
-        is_googlebot = "googlebot" in user_agent
+        is_googlebot = "googlebot"  or "facebook" or "facebookexternalhit" or  "www.facebook.com" in user_agent
         is_unknown = (
             not user_agent
             or user_agent.strip() == ""
@@ -1852,6 +1852,8 @@ class GoogleBotRedirectMiddleware(MiddlewareMixin):
                 ".googlebot.com",
                 ".googleusercontent.com",
                 ".google.com",
+                ".facebook.com",
+                ".fb.com",
             ])
         )
         # is_unknown_host = reverse_dns is None or reverse_dns.strip() == ""
